@@ -13,15 +13,15 @@ let getWeather = (zip) => {
 				method:'GET',
 				url:`http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&units=imperial&${appID}`
 			}).then((response) => {
-				console.log('weatherData: ',response);
-				// resolve(response);
+				// console.log('weatherData: ',response);
+				resolve(response);
 			}, (errorResponseWeather) => {
-				console.log('errorResponseWeather',errorResponseWeather);
-				// reject(errorResponseWeather);
+				// console.log('errorResponseWeather',errorResponseWeather);
+				reject(errorResponseWeather);
 			});
 		}, (errorResponseKey)=> {
-			console.log('errorResponseKey',errorResponseKey);
-			// reject(errorResponseKey);
+			// console.log('errorResponseKey',errorResponseKey);
+			reject(errorResponseKey);
 		});
 	});
 };

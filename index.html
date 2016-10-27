@@ -7,6 +7,14 @@
 	<link rel="stylesheet" type="text/css" href="/styles/main.css"/>
 </head>
 <body>
+<h1>Local Weather App</h1>
+	<div class="panel panel-default search-bar col-xs-offset-3">
+  		<div class="panel-body">
+    		<input class="form-control" type="text" id="imgur-search" placeholder="zip code"/>
+    		<button type="button" class="btn btn-primary btn-lg" id="clicky-button"  data-loading-text='<i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>'>Get Current Forecast</button>
+  		</div>
+	</div>
+	<div id="output"></div>
 
 <script type="text/javascript" src="/lib/bower_components/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
