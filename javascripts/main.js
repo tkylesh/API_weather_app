@@ -28,8 +28,23 @@ let getWeather = (zip) => {
 
 $(document).ready(() => {
 	console.log('jquery is ready');
-	getWeather(38401).then((weatherData) => {
-		console.log('data from weather api: ',weatherData);
-	});
+	$('#clicky-button').on('click',() => {
+		$('#clicky-button').button('loading');
+		$('#output').html("");
+		let searchy = $('#zip-search').val();
+		console.log('its working', searchy);
 
+		getWeather(searchy).then((weatherData) => {
+			$('#clicky-button').button('reset');
+			console.log('data from weather api: ',weatherData);
+			$('#output').append(`<h1>${weatherData.name}</h1>`);
+			$('#output').append(`<h1>${weatherData.weather[0].description}</h1>`);
+			$('#output').append(`<h1>${weatherData.main.temp}&#x2109;</h1>`);
+			$('#output').append(`<h1>${weatherData.wind.speed} MPH</h1>`);
+			$('#output').append(`<h1>${weatherData.main.pressure}</h1>`);
+
+		}).catch((error) => {
+				$('#clicky-button').button('reset');
+		});
+	});
 });
