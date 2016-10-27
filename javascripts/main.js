@@ -11,7 +11,7 @@ let getWeather = (zip) => {
 
 			$.ajax({
 				method:'GET',
-				url:`api.openweathermap.org/data/2.5/weather?zip=${zip},us&${appID}`
+				url:`http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&units=imperial&${appID}`
 			}).then((response) => {
 				console.log('weatherData: ',response);
 				// resolve(response);
